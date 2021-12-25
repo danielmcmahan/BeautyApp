@@ -1,0 +1,295 @@
+body {
+  font-family: $font !important;
+  background-color: #f6f5f5;
+  direction: rtl;
+  text-align: right;
+  height: 100vh;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  font-family: $font !important;
+}
+
+html,
+* {
+  font-family: $font !important;
+}
+
+.Toastify {
+  font-size: 14px !important;
+}
+
+p {
+  line-height: 30px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+* {
+  outline: 0;
+}
+
+.mt-6rem {
+  margin-top: 6rem;
+}
+
+.mb-5rem {
+  margin-bottom: 5rem;
+}
+
+.mb-6rem {
+  margin-bottom: 6rem;
+}
+
+.modal-content {
+  border-radius: 6px;
+}
+
+.show-more {
+  background-color: #1f3c88;
+  color: #fff !important;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: darken($color: #1f3c88, $amount: 10%);
+  }
+
+  i {
+    font-size: 10px;
+  }
+}
+
+.common-form {
+  label {
+    padding-right: $spacer;
+  }
+
+  .form-control,
+  .form-select,
+  .textarea {
+    height: 55px;
+    border-radius: 6px;
+    box-shadow: none;
+    @include textStyle(16px, #000, 500);
+    padding-right: $spacer;
+    padding-left: $spacer;
+    background-color: #fff;
+
+    &::placeholder {
+      @include textStyle(16px, rgba(0, 0, 0, 0.795), 300);
+    }
+
+    &[dir="ltr"] {
+      &::placeholder {
+        text-align: right;
+      }
+    }
+
+    &:read-only {
+      cursor: default;
+    }
+  }
+
+  .textarea {
+    height: auto;
+    padding-top: $spacer;
+  }
+
+  .form-select {
+    background-position: left 1rem center;
+    cursor: pointer;
+  }
+
+  .btn {
+    width: 100%;
+    background-color: #1f3c88;
+    @include textStyle(16px, #fff, 500);
+    text-align: center;
+    margin-top: $spacer;
+    border-radius: 6px;
+    padding: 17px 0;
+    transition: 0.3s;
+    box-shadow: 0 4px 20px #1f3d887a;
+
+    &:hover {
+      background-color: #ee6f57;
+      box-shadow: 0 4px 20px #ee705793;
+    }
+  }
+}
+
+fieldset {
+  padding: $spacer $spacer * 2 $spacer * 2;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  background-color: #fff;
+
+  @include media-breakpoint-down(md) {
+    padding: $spacer $spacer $spacer * 2;
+  }
+
+  .form-control,
+  .form-select,
+  .textarea {
+    background-color: #fff;
+  }
+
+  .form-select:disabled {
+    background-color: #fafafa;
+  }
+
+  .form-control,
+  .textarea {
+    &:read-only {
+      background-color: #fafafa;
+    }
+  }
+
+  h4 {
+    background-color: #fff;
+    padding: 12px 32px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+  }
+}
+
+legend,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #1f3c88;
+}
+
+.table {
+  td,
+  th {
+    padding: $spacer;
+    vertical-align: middle;
+  }
+
+  th {
+    font-weight: 800;
+  }
+
+  tbody tr {
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #dbdbdb;
+    }
+  }
+}
+
+.form-check {
+  @include media-breakpoint-up(md) {
+    margin-top: 1.5rem;
+  }
+}
+
+.modal {
+  &.active {
+    display: block !important;
+  }
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  button {
+    pointer-events: auto !important;
+  }
+}
+
+.reload-loading {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+
+  .linear-activity {
+    overflow: hidden;
+    width: 100%;
+    background-color: #ffd3cb;
+    padding: 0;
+  }
+
+  .indeterminate {
+    position: relative;
+    width: 100%;
+    height: 6px;
+  }
+
+  .indeterminate:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-color: #ee6f57;
+    animation: indeterminate_first 1.5s infinite ease-out;
+  }
+
+  .indeterminate:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background-color: #ee6f57;
+    animation: indeterminate_second 1.5s infinite ease-in;
+  }
+
+  @keyframes indeterminate_first {
+    0% {
+      left: -100%;
+      width: 100%;
+    }
+    100% {
+      left: 100%;
+      width: 10%;
+    }
+  }
+
+  @keyframes indeterminate_second {
+    0% {
+      left: -150%;
+      width: 100%;
+    }
+    100% {
+      left: 100%;
+      width: 10%;
+    }
+  }
+}
+
+.load-more-table {
+  background-color: #fff;
+  @include textStyle(14px, #1f3c88, 500);
+  border: 1px solid #1f3c88;
+  padding: $spacer / 1.5 $spacer * 2;
+  transition: 0.3s;
+  height: 50px;
+  width: 160px;
+  margin: 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #1f3c88;
+    color: #fff;
+  }
+}

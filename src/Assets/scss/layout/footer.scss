@@ -1,0 +1,30 @@
+.footer {
+  padding: $spacer 0;
+  background-color: #191a19;
+  margin-top: $spacer * 4;
+
+  .socials {
+    a {
+      display: inline-flex;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      //   background-color: #fff;
+      border-radius: 3px;
+      color: #fff;
+      transition: 0.3s;
+      margin-left: 0;
+
+      &:hover {
+        background-color: #0f52ba;
+        color: #fff;
+      }
+
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+}

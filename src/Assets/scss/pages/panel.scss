@@ -1,0 +1,261 @@
+.header {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 1.5rem $spacer * 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%);
+  margin: $spacer 0 $spacer * 6;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: $spacer * 4;
+  }
+
+  .dr-name,
+  .operation {
+    @include textStyle(15px, rgba(0, 0, 0, 0.89), 400);
+
+    i {
+      font-size: 18px;
+    }
+  }
+
+  strong {
+    color: #1f3c88;
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .bell {
+    position: relative;
+
+    i {
+      font-size: 25px;
+      color: #1f3c88;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      right: 0px;
+      border-radius: 50%;
+      background-color: #ee6f57;
+      width: 8px;
+      height: 8px;
+    }
+  }
+}
+
+.main-content {
+  .action-toggler {
+    @include textStyle(14px, #ee6f57, 500);
+    text-align: center;
+    border-radius: 6px;
+    padding: 15.4px 24px;
+    transition: 0.3s;
+    border: 1px solid #ee6f57;
+    background-color: #fff;
+    margin-top: $spacer;
+    width: auto;
+
+    &:hover {
+      background-color: #ee6f57;
+      color: #fff;
+    }
+
+    &-fill {
+      background-color: #ee6f57;
+      color: #fff;
+    }
+  }
+
+  .search-box {
+    .form-group {
+      position: relative;
+
+      .form-control {
+        height: 55px;
+        border-radius: 6px;
+        box-shadow: none;
+        @include textStyle(16px, #000, 500);
+        padding-right: $spacer;
+
+        &::placeholder {
+          @include textStyle(14px, rgba(0, 0, 0, 0.795), 300);
+        }
+      }
+
+      .btn {
+        @include textStyle(20px, #fff, 400);
+        background-color: #ee6f57;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px 14px;
+        transition: 0.3s;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        bottom: 4px;
+
+        &:hover {
+          background-color: #1f3c88;
+        }
+      }
+    }
+  }
+
+  .illness-card {
+    border-radius: 6px;
+    background-color: #fff;
+    padding: $spacer;
+    border: 1px solid #1f3d882a;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.3s;
+    margin-bottom: $spacer;
+
+    &:hover {
+      box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%);
+    }
+
+    .sick-ico {
+      display: inline-flex;
+      width: 90px;
+      height: 90px;
+      background-color: #1f3c88;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-top: -4rem;
+      margin-bottom: 1.5rem;
+
+      i {
+        color: #fff;
+        font-size: 45px;
+      }
+    }
+
+    p {
+      @include textStyle(16px, rgba(0, 0, 0, 0.76), 400);
+
+      strong {
+        color: #1f3c88;
+        font-size: 16px;
+      }
+    }
+
+    a {
+      width: 100%;
+      @include textStyle(14px, #fff, 500);
+      text-align: center;
+      border-radius: 6px;
+      padding: 14px 0;
+      transition: 0.3s;
+      background-color: #ee6f57;
+      margin-top: $spacer;
+
+      &:hover {
+        background-color: #1f3c88;
+      }
+    }
+  }
+}
+
+.desc {
+  border-radius: 12px;
+  background-color: #eee;
+  padding: $spacer;
+
+  &-header {
+    color: #1f3c88;
+  }
+
+  .text {
+    color: rgba(0, 0, 0, 0.705);
+    font-size: 14px;
+
+    @include media-breakpoint-down(md) {
+      text-align: justify;
+    }
+  }
+}
+
+.swiper-illness {
+  padding: 4rem 0;
+
+  .swiper-pagination {
+    position: static;
+    margin-top: $spacer;
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 50rem;
+      transition: 0.3s;
+
+      &.swiper-pagination-bullet-active {
+        background-color: #0f52ba;
+        width: 50px;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: $spacer 0;
+  text-align: center;
+  background-color: #070d59;
+  color: #fff;
+}
+
+.navigation {
+  justify-content: center;
+  display: inline-flex;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 4px;
+  border: $border-width solid #e1e1e1;
+
+  @include media-breakpoint-down(sm) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-item:not(:last-of-type) {
+    @include media-breakpoint-up(sm) {
+      margin-left: $spacer;
+    }
+  }
+
+  .nav-link {
+    @include textStyle(16px, #000, 500);
+    transition: 0.3s;
+    border-radius: 5px;
+    padding: 13px 24px;
+
+    &.active {
+      background-color: #1f3c88;
+      color: #fff;
+    }
+  }
+}
+
+#secratory-list {
+  .action-toggler {
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+
+  .table {
+    @include media-breakpoint-down(md) {
+      width: 696px;
+    }
+  }
+}

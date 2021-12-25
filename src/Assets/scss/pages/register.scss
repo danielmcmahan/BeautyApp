@@ -1,0 +1,81 @@
+.card-form {
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%);
+  padding: $spacer * 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @include media-breakpoint-down(sm) {
+    padding: $spacer * 2 $spacer;
+  }
+
+  .form-group {
+    width: 100%;
+    position: relative;
+    height: 90px;
+
+    span {
+      position: absolute;
+      top: 18px;
+      right: 16px;
+      opacity: 30%;
+
+      &::before {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .prof {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #1f3c88;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      color: #fff;
+
+      &::before {
+        font-size: 60px;
+      }
+    }
+  }
+
+  .form-control {
+    height: 55px;
+    border-radius: 6px;
+    box-shadow: none;
+    @include textStyle(16px, #000, 500);
+    padding-right: $spacer * 3;
+
+    &::placeholder {
+      @include textStyle(16px, rgba(0, 0, 0, 0.795), 300);
+    }
+  }
+
+  .btn {
+    width: 100%;
+    background-color: #1f3c88;
+    @include textStyle(16px, #fff, 500);
+    text-align: center;
+    margin-top: $spacer;
+    border-radius: 6px;
+    height: 55px;
+    transition: 0.3s;
+    box-shadow: 0 4px 20px #1f3d887a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #ee6f57;
+      box-shadow: 0 4px 20px #ee70579a;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.header {
+  padding: $spacer 0;
+  background-color: #ffff;
+
+  .search-box {
+    position: relative;
+
+    .form-control {
+      background-color: #fff;
+      box-shadow: none;
+      border-radius: 6px;
+      border: 1px solid rgb(211, 211, 211);
+      @include textStyle(16px, #000000, 500);
+      padding-right: $spacer;
+      height: 40px;
+      width: 100%;
+
+      &::placeholder {
+        @include textStyle(12px, #a7a7a7, 400);
+      }
+    }
+
+    .btn {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      bottom: 2px;
+      border-radius: 6px;
+      @include textStyle(14px, #ffffff, 400);
+      background-color: #0f52ba;
+      padding: 0 20px;
+    }
+  }
+
+  .registration {
+    display: flex;
+    justify-content: flex-end;
+
+    .signin {
+      @include textStyle(14px, #fff, 400);
+      background-color: #0f52ba;
+      border-radius: 6px;
+      padding: 8px 24px;
+
+      @include media-breakpoint-down(md) {
+        padding: 6px 16px;
+      }
+    }
+
+    .login {
+      @include textStyle(14px, #0f52ba, 400);
+      background-color: #fff;
+      border-radius: 6px;
+      border: 1px solid #0f52ba;
+      padding: 8px 24px;
+
+      @include media-breakpoint-down(md) {
+        padding: 6px 16px;
+      }
+    }
+  }
+}
